@@ -18,16 +18,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.google.android.gms:play-services-ads:11.6.2'
+    implementation 'com.google.api-client:google-api-client:1.23.0'
+    implementation 'com.google.api-client:google-api-client-android:1.23.0'
     implementation project(':javaJokes')
     implementation project(':androidJokes')
+    implementation project(path: ':backend', configuration: 'android-endpoints')
 
 }
