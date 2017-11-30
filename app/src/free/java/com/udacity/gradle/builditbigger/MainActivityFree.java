@@ -2,7 +2,6 @@ package com.udacity.gradle.builditbigger;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -30,9 +29,8 @@ public class MainActivityFree extends MainActivity {
     }
 
     @Override
-    public void tellJoke(View view) {
-        super.tellJoke(view);
-
+    protected void doAfterExecuteTask() {
+        super.doAfterExecuteTask();
         // Show ad
         if (mInterstitialAd.isLoaded()) {
             mInterstitialAd.show();
